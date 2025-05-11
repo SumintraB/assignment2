@@ -42,5 +42,22 @@ editor: visual
 -   **Link the local repository to the remote GitHub repository**:\
     git remote add origin git\@github.com:your-username/your-repository.git
 
--   Push your local repository to GitHub.\
+-   **Push your local repository to GitHub**.\
     git push -u origin main
+
+3\. Create a new branch called testbranch. Modify the file example.qmd and add the changes to both the local and remote repositories.
+
+-   **Create and switch to a new branch called *testbranch***\
+    git branch testbranch - creates a new branch named testbranch\
+    git switch testbranch -switch to created branch
+
+-   **Modify the example.qmd**
+
+-   **Stage all the files**\
+    git add .
+
+-   **Make a commit**\
+    git commit -m "modified example.qmd"
+
+-   **Push the commit to the remote testbranch on Github**\
+    git push origin testbranch
