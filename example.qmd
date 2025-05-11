@@ -25,19 +25,17 @@ editor: visual
 -   **Initialize a Git repository** in the current folder. This sets up version control for your project\
     git init
 
--   **Create a *.gitignore*** **file** and add .Rproj.user/ to exclude unnecessary RStudio project files from being tracked.
+-   **Create a *.gitignore*** **file** and ***add .Rproj.user/*** to exclude unnecessary RStudio project files from being tracked.
 
 -   **Stage all project files** for commit.\
     git add .
 
 -   **Commit the changes** with a clear message describing what was done\
-    git commit -m "created project and qmd file"
+    git commit -m "created a new project and qmd file"
 
 -   **On GitHub**, create a new repository manually. Make sure **not to include** a **README, .gitignore, or license**.
 
 -   **Copy the repository’s SSH URL** from GitHub.
-
-<!-- -->
 
 -   **Link the local repository to the remote GitHub repository**:\
     git remote add origin git\@github.com:your-username/your-repository.git
