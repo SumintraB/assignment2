@@ -108,10 +108,9 @@ editor: visual
 
 -   **Push the updated to main branch**\
     git push origin main\
-    
+
     ![](images/conflict_after_merge.png)
-    
-    
+
 7\. Tag this commit v1.0 on main using an annotated tag.
 
 -   **Create an annotated tag**\
@@ -133,3 +132,26 @@ editor: visual
 
 -   **Delete the branch from the remote**\
     git push origin –-delete testbranch
+
+9.  Show the commit log in condensed form in the terminal.
+
+    git log –-oneline ![](images/commit_log.png)
+
+10. On main, create a new section in example.qmd that includes an easy to make plot. Commit the changes, and demonstrate using the command line interface how to undo the commit *without* losing your local changes.
+
+#### Basic Plot
+
+```{r}
+plot(cars)
+```
+
+-   **Create a new simple plot**
+
+-   **Save the file and stage all changes**\
+    git add .
+
+-   **Commit the change**\
+    git commit -m “modified example.qmd on step 10”
+
+-   **Undo the commit, while keeping the changes on the file**\
+    git reset –soft HEAD\~1
