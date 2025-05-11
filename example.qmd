@@ -135,7 +135,9 @@ editor: visual
 
 9.  Show the commit log in condensed form in the terminal.
 
-    git log –-oneline ![](images/commit_log.png)
+    git log –-oneline \
+    \
+    ![](images/commit_log.png)
 
 10. On main, create a new section in example.qmd that includes an easy to make plot. Commit the changes, and demonstrate using the command line interface how to undo the commit *without* losing your local changes.
 

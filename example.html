@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -75,8 +109,126 @@ ul.task-list li input[type="checkbox"] {
 <p>1. Create a new RStudio Project. In this folder, create a simple qmd file called that can be knitted into a HTML file. Show the result of the example.qmd knitted file.</p>
 <ul>
 <li><p><strong>Start a new RStudio project</strong> - create a new RStudio Project named “assignment2”</p></li>
-<li><p><strong>Create and edit a .qmd file</strong> - create a new file named “example.qmd”. Update the YAML so the the document can be knitted into html and pdf by default.</p></li>
+<li><p><strong>Create and edit a .qmd file</strong> - create a new file named “example.qmd”. Update the YAML so the the document can be knitted into html and pdf by default.</p>
+<p><img src="images/knitted.png" class="img-fluid"></p></li>
 </ul>
+<p>2. From the command line interface, initialise this folder as a git repository and push it to the GitHub classroom repository.</p>
+<ul>
+<li><p><strong>Open your terminal</strong> and change into the project directory.<br>
+cd documents/assignment2</p></li>
+<li><p><strong>Initialize a Git repository</strong> in the current folder. This sets up version control for your project<br>
+git init</p></li>
+<li><p><strong>Create a <em>.gitignore</em></strong> <strong>file</strong> and <strong><em>add .Rproj.user/</em></strong> to exclude unnecessary RStudio project files from being tracked.</p></li>
+<li><p><strong>Stage all project files</strong> for commit.<br>
+git add .</p></li>
+<li><p><strong>Commit the changes</strong> with a clear message describing what was done<br>
+git commit -m “created a new project and qmd file”</p></li>
+<li><p><strong>On GitHub</strong>, create a new repository manually. Make sure <strong>not to include</strong> a <strong>README, .gitignore, or license</strong>.</p></li>
+<li><p><strong>Copy the repository’s SSH URL</strong> from GitHub.</p></li>
+<li><p><strong>Link the local repository to the remote GitHub repository</strong>:<br>
+git remote add origin git@github.com:your-username/your-repository.git</p></li>
+<li><p><strong>Push your local repository to GitHub.</strong><br>
+git push -u origin main</p></li>
+</ul>
+<p>3. Create a new branch called testbranch. Modify the file example.qmd and add the changes to both the local and remote repositories.</p>
+<ul>
+<li><p><strong>Create and switch to a new branch called <em>testbranch</em></strong><br>
+git branch testbranch - creates a new branch named testbranch<br>
+git switch testbranch -switch to created branch</p></li>
+<li><p><strong>Modify the example.qmd</strong></p></li>
+<li><p><strong>Stage all the files</strong><br>
+git add .</p></li>
+<li><p><strong>Make a commit</strong><br>
+git push origin testbranch git commit -m “modified example.qmd in step3”</p></li>
+<li><p><strong>Push the commit to the remote testbranch on Github</strong><br>
+git push origin testbranch</p></li>
+</ul>
+<p>4. Create a folder called data, and add the data from Assignment 1 to that folder. Amend the previous commit to include the data folder. Push this amended commit to the remote.</p>
+<ul>
+<li><p><strong>Create a new folder named <em>data</em> and place the data from assignment1</strong></p></li>
+<li><p><strong>Stage all the new files</strong><br>
+git add .</p></li>
+<li><p><strong>Make a commit with message</strong><br>
+git commit -m “added new data folder”</p></li>
+<li><p><strong>Push the changes to the remote testbranch</strong><br>
+git push origin testbranch</p></li>
+</ul>
+<p>5. Switch back to the main branch and modify example.qmd in a different way such that it will conflict with testbranch. Commit and push these changes</p>
+<ul>
+<li><p><strong>Switch back to main</strong><br>
+git switch main</p></li>
+<li><p><strong>Modify change on example.qmd file</strong>- update the same part as on testbranch so it creates conflict with the testbranch.</p></li>
+<li><p><strong>Stage and commit the change<br>
+</strong>git add .<br>
+git commit -m “modified example.qmd on main”</p></li>
+<li><p><strong>Push the changes to main</strong><br>
+git push origin main</p></li>
+</ul>
+<p>6. Merge the changes in testbranch onto main. Show the conflict and fixing the merge conflict. Push the changes to GitHub, showing the status and changes in GitHub.</p>
+<ul>
+<li><p><strong>Ensure sure you are on the main branch</strong><br>
+git branch<br>
+<strong>(if not)</strong><br>
+git switch main</p></li>
+<li><p><strong>Merge the testbranch into main</strong><br>
+git merge testbranch</p></li>
+<li><p><strong>If the conflict appears, fix the conflict by choose the preferred version and remove</strong><br>
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>
+=======<br>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt;</p></li>
+<li><p><strong>Stage and commit the resolved conflict</strong><br>
+git add .<br>
+git commit -m “conflict resolved”</p></li>
+<li><p><strong>Push the updated to main branch</strong><br>
+git push origin main<br>
+</p>
+<p><img src="images/conflict_after_merge.png" class="img-fluid"></p></li>
+</ul>
+<p>7. Tag this commit v1.0 on main using an annotated tag.</p>
+<ul>
+<li><p><strong>Create an annotated tag</strong><br>
+git tag -a v1.0</p></li>
+<li><p><strong>Add the tag massage</strong><br>
+“Version 1.0 - merged testbranch and resolved conflict”</p></li>
+<li><p><strong>Push the tag to remote</strong><br>
+git push origin v1.0</p></li>
+</ul>
+<p>8. Delete branch testbranch locally and on the remote.</p>
+<ul>
+<li><p><strong>Ensure you are on main branch</strong>&nbsp;- branch cannot be deleted if you are in the branch that wish to be delete<br>
+git switch main</p></li>
+<li><p><strong>Delete the branch locally</strong><br>
+git branch -d testbranch</p></li>
+<li><p><strong>Delete the branch from the remote</strong><br>
+git push origin –-delete testbranch</p></li>
+</ul>
+<ol start="9" type="1">
+<li><p>Show the commit log in condensed form in the terminal.</p>
+<p>git log –-oneline <img src="images/commit_log.png" class="img-fluid"></p></li>
+<li><p>On main, create a new section in example.qmd that includes an easy to make plot. Commit the changes, and demonstrate using the command line interface how to undo the commit <em>without</em> losing your local changes.</p></li>
+</ol>
+<section id="basic-plot" class="level4">
+<h4 class="anchored" data-anchor-id="basic-plot">Basic Plot</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(cars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="example_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><p><strong>Create a new simple plot</strong></p></li>
+<li><p><strong>Save the file and stage all changes</strong><br>
+git add .</p></li>
+<li><p><strong>Commit the change</strong><br>
+git commit -m “modified example.qmd on step 10”</p></li>
+<li><p><strong>Undo the commit, while keeping the changes on the file</strong><br>
+git reset –soft HEAD~1</p></li>
+</ul>
+</section>
 </section>
 
 </main>
