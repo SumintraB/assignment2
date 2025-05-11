@@ -41,6 +41,7 @@ editor: visual
     git remote add origin git\@github.com:your-username/your-repository.git
 
 -   **Push your local repository to GitHub**.\
+-   **Push your local repository to GitHub.**\
     git push -u origin main
 
 3\. Create a new branch called testbranch. Modify the file example.qmd and add the changes to both the local and remote repositories.
@@ -59,3 +60,34 @@ editor: visual
 
 -   **Push the commit to the remote testbranch on Github**\
     git push origin testbranch
+    git commit -m “modified example.qmd in step3”
+
+-   **Push the commit to the remote testbranch on Github**\
+    git push origin testbranch
+
+4\. Create a folder called data, and add the data from Assignment 1 to that folder. Amend the previous commit to include the data folder. Push this amended commit to the remote.
+
+-   **Create a new folder named *data* and place the data from assignment1**
+
+-   **Stage all the new files**\
+    git add .
+
+-   **Make a commit with message**\
+    git commit -m “added new data folder””
+
+-   **Push the changes to the remote testbranch**\
+    git push origin testbranch
+
+5\. Switch back to the main branch and modify example.qmd in a different way such that it will conflict with testbranch. Commit and push these changes
+
+-   **Switch back to main**\
+    git switch main
+
+-   **Modify change on example.qmd file**- update the same part as on testbranch so it creates conflict with the testbranch.
+
+-   **Stage and commit the change\
+    **git add .\
+    git commit -m “modified example.qmd on main”
+
+-   **Push the changes to main**\
+    git push origin main
