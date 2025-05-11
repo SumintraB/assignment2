@@ -55,7 +55,7 @@ editor: visual
     git add .
 
 -   **Make a commit**\
-    git push origin testbranch git commit -m “modified example.qmd in step3”
+    git push origin testbranch git commit -m “modified example.qmd for branching in step3”
 
 -   **Push the commit to the remote testbranch on Github**\
     git push origin testbranch
@@ -97,7 +97,7 @@ editor: visual
 -   **Merge the testbranch into main**\
     git merge testbranch
 
--   **If the conflict appears, fix the conflict by choose the preferred version and remove**\
+-   **If the conflict appears, fix the conflict by choosing the preferred version and remove**\
     \<\<\<\<\<\<\<\
     =======\
     \>\>\>\>\>\>\>
@@ -116,7 +116,7 @@ editor: visual
 -   **Create an annotated tag**\
     git tag -a v1.0
 
--   **Add the tag massage**\
+-   **Add the tag message**\
     “Version 1.0 - merged testbranch and resolved conflict”
 
 -   **Push the tag to remote**\
