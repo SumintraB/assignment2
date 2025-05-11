@@ -125,8 +125,9 @@ git add .</p></li>
 git commit -m “created a new project and qmd file”</p></li>
 <li><p><strong>On GitHub</strong>, create a new repository manually. Make sure <strong>not to include</strong> a <strong>README, .gitignore, or license</strong>.</p></li>
 <li><p><strong>Copy the repository’s SSH URL</strong> from GitHub.</p></li>
-<li><p><strong>Link the local repository to the remote GitHub repository</strong>:<br>
-git remote add origin git@github.com:your-username/your-repository.git</p></li>
+<li><p><strong>Link the local repository to the remote GitHub repository</strong><br>
+git remote add origin git@github.com:your-username/your-repository.git<br>
+git remote add origin git@github.com:SumintraB/assignment2.git (this is the code URL to my repository)</p></li>
 <li><p><strong>Push your local repository to GitHub.</strong><br>
 git push -u origin main</p></li>
 </ul>
@@ -139,7 +140,7 @@ git switch testbranch -switch to created branch</p></li>
 <li><p><strong>Stage all the files</strong><br>
 git add .</p></li>
 <li><p><strong>Make a commit</strong><br>
-git push origin testbranch git commit -m “modified example.qmd in step3”</p></li>
+git push origin testbranch git commit -m “modified example.qmd for branching in step3”</p></li>
 <li><p><strong>Push the commit to the remote testbranch on Github</strong><br>
 git push origin testbranch</p></li>
 </ul>
@@ -172,7 +173,7 @@ git branch<br>
 git switch main</p></li>
 <li><p><strong>Merge the testbranch into main</strong><br>
 git merge testbranch</p></li>
-<li><p><strong>If the conflict appears, fix the conflict by choose the preferred version and remove</strong><br>
+<li><p><strong>If the conflict appears, fix the conflict by choosing the preferred version and remove</strong><br>
 &lt;&lt;&lt;&lt;&lt;&lt;&lt;<br>
 =======<br>
 &gt;&gt;&gt;&gt;&gt;&gt;&gt;</p></li>
@@ -188,10 +189,11 @@ git push origin main<br>
 <ul>
 <li><p><strong>Create an annotated tag</strong><br>
 git tag -a v1.0</p></li>
-<li><p><strong>Add the tag massage</strong><br>
+<li><p><strong>Add the tag message</strong><br>
 “Version 1.0 - merged testbranch and resolved conflict”</p></li>
 <li><p><strong>Push the tag to remote</strong><br>
-git push origin v1.0</p></li>
+git push origin v1.0</p>
+<p><img src="images/tag.png" class="img-fluid"></p></li>
 </ul>
 <p>8. Delete branch testbranch locally and on the remote.</p>
 <ul>

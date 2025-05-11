@@ -37,8 +37,9 @@ editor: visual
 
 -   **Copy the repository’s SSH URL** from GitHub.
 
--   **Link the local repository to the remote GitHub repository**:\
-    git remote add origin git\@github.com:your-username/your-repository.git
+-   **Link the local repository to the remote GitHub repository**\
+    git remote add origin git\@github.com:your-username/your-repository.git\
+    git remote add origin git\@github.com:SumintraB/assignment2.git (this is the code URL to my repository)
 
 -   **Push your local repository to GitHub.**\
     git push -u origin main
@@ -121,6 +122,8 @@ editor: visual
 
 -   **Push the tag to remote**\
     git push origin v1.0
+    
+    ![](images/tag.png)
 
 8\. Delete branch testbranch locally and on the remote.
 
