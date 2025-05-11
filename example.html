@@ -204,7 +204,9 @@ git push origin –-delete testbranch</p></li>
 </ul>
 <ol start="9" type="1">
 <li><p>Show the commit log in condensed form in the terminal.</p>
-<p>git log –-oneline <img src="images/commit_log.png" class="img-fluid"></p></li>
+<p>git log –-oneline<br>
+<br>
+<img src="images/commit_log.png" class="img-fluid"></p></li>
 <li><p>On main, create a new section in example.qmd that includes an easy to make plot. Commit the changes, and demonstrate using the command line interface how to undo the commit <em>without</em> losing your local changes.</p></li>
 </ol>
 <section id="basic-plot" class="level4">
@@ -224,10 +226,11 @@ git push origin –-delete testbranch</p></li>
 <li><p><strong>Save the file and stage all changes</strong><br>
 git add .</p></li>
 <li><p><strong>Commit the change</strong><br>
-git commit -m “modified example.qmd on step 10”</p></li>
+git commit -m “modified example.qmd in step 10”</p></li>
 <li><p><strong>Undo the commit, while keeping the changes on the file</strong><br>
-git reset –soft HEAD~1</p></li>
+git reset –-soft HEAD~1</p></li>
 </ul>
+<p><img src="images/undo_commit.png" class="img-fluid"></p>
 </section>
 </section>
 

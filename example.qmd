@@ -19,7 +19,7 @@ editor: visual
 
 2\. From the command line interface, initialise this folder as a git repository and push it to the GitHub classroom repository.
 
--   **Open your terminal** and change into the project directory.\
+-   **Open the terminal** and change into the project directory.\
     cd documents/assignment2
 
 -   **Initialize a Git repository** in the current folder. This sets up version control for your project\
@@ -124,7 +124,7 @@ editor: visual
 
 8\. Delete branch testbranch locally and on the remote.
 
--   **Ensure you are on main branch** - branch cannot be deleted if you are in the branch that wish to be delete\
+-   **Ensure you are on main branch** - branch cannot be deleted if you are in the branch that wish to be delete\
     git switch main
 
 -   **Delete the branch locally**\
@@ -135,7 +135,7 @@ editor: visual
 
 9.  Show the commit log in condensed form in the terminal.
 
-    git log –-oneline \
+    git log –-oneline\
     \
     ![](images/commit_log.png)
 
@@ -157,3 +157,5 @@ plot(cars)
 
 -   **Undo the commit, while keeping the changes on the file**\
     git reset –-soft HEAD\~1
+
+![](images/undo_commit.png)
