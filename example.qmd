@@ -153,7 +153,7 @@ plot(cars)
     git add .
 
 -   **Commit the change**\
-    git commit -m “modified example.qmd on step 10”
+    git commit -m “modified example.qmd in step 10”
 
 -   **Undo the commit, while keeping the changes on the file**\
-    git reset –soft HEAD\~1
+    git reset –-soft HEAD\~1
