@@ -1,0 +1,46 @@
+---
+title: "ETC5513 Assignment2"
+format: 
+  html: default
+  pdf: default
+author: "Sumintra Boonmat"
+editor: visual
+---
+
+## Assignment 2: git, GitHub, and the command line interface
+
+1\. Create a new RStudio Project. In this folder, create a simple qmd file called that can be knitted into a HTML file. Show the result of the example.qmd knitted file.
+
+-   **Start a new RStudio project** - create a new RStudio Project named "assignment2"
+
+-   **Create and edit a .qmd file** - create a new file named "example.qmd". Update the YAML so the the document can be knitted into html and pdf by default.
+
+    ![](images/knitted.png)
+
+2\. From the command line interface, initialise this folder as a git repository and push it to the GitHub classroom repository.
+
+-   **Open your terminal** and change into the project directory.\
+    cd documents/assignment2
+
+-   **Initialize a Git repository** in the current folder. This sets up version control for your project\
+    git init
+
+-   **Create a *.gitignore*** **file** and add .Rproj.user/ to exclude unnecessary RStudio project files from being tracked.
+
+-   **Stage all project files** for commit.\
+    git add .
+
+-   **Commit the changes** with a clear message describing what was done\
+    git commit -m "created project and qmd file"
+
+-   **On GitHub**, create a new repository manually. Make sure **not to include** a **README, .gitignore, or license**.
+
+-   **Copy the repository’s SSH URL** from GitHub.
+
+<!-- -->
+
+-   **Link the local repository to the remote GitHub repository**:\
+    git remote add origin git\@github.com:your-username/your-repository.git
+
+-   Push your local repository to GitHub.\
+    git push -u origin main
